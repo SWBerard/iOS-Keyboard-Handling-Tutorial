@@ -10,16 +10,68 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWasShown(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func keyboardWasShown(aNotification: NSNotification) {
+        
+        print("Keyboard was shown")
+        
+        guard let info = aNotification.userInfo else {
+            
+            print("Error: No info from notification")
+            return
+        }
+        
+        guard let kbSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size else {
+            
+            print("Error: No size for keyboard in info")
+            return
+        }
+        
+        print("Size: \(kbSize)")
+        
+        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    func keyboardWillBeHidden(aNotification: NSNotification) {
+        
+        print("Keyboard was hidden")
+        
+        let contentInsets = UIEdgeInsetsZero
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
 
+    }
+
+    @IBAction func userTappedBackground(sender: AnyObject) {
+        
+        self.view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

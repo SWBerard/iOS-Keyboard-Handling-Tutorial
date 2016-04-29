@@ -33,10 +33,14 @@
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="FMv-EQ-aCJ" secondAttribute="bottom" constant="56" id="dti-8M-3DJ"/>
                                             <constraint firstItem="FMv-EQ-aCJ" firstAttribute="centerX" secondItem="3lo-df-LL4" secondAttribute="centerX" id="wlQ-7b-fOE"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="BOU-Vc-WpC" appends="YES" id="EX7-0p-P8r"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -57,8 +61,16 @@
                             <constraint firstItem="Wkb-fy-Jgd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sWw-Jz-RiU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Wkb-fy-Jgd" id="sAF-kf-JR9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BOU-Vc-WpC">
+                    <connections>
+                        <action selector="userTappedBackground:" destination="BYZ-38-t0r" id="0qy-x4-C7Y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="320" y="349"/>
         </scene>
