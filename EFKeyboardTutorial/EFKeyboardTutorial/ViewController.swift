@@ -6,6 +6,8 @@
 //  Copyright © 2016 Event Farm. All rights reserved.
 //
 
+//  Code for how to display the keyboard properly is adapted from: https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html
+
 import UIKit
 
 class ViewController: UIViewController {
