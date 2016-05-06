@@ -32,7 +32,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="FMv-EQ-aCJ" secondAttribute="bottom" constant="56" id="dti-8M-3DJ"/>
@@ -53,7 +53,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Wkb-fy-Jgd" secondAttribute="trailing" id="5aK-Gf-f2g"/>
                             <constraint firstItem="Wkb-fy-Jgd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dEJ-YK-xB6"/>
